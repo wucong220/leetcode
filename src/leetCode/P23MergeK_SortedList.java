@@ -1,43 +1,34 @@
 package leetCode;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+
 public class P23MergeK_SortedList {
-    static public ListNode mergeKLists(ListNode[] lists) {
-        boolean flag=false;
+	static public ListNode mergeKLists(ListNode[] lists) {
+	ListNode head = null;
+		List<Integer> list = new ArrayList<Integer>();
     	for(ListNode l:lists){
-        	if(l!=null){
-        		flag=true;
-        		break;
-        	}
-        }
-    	if(!flag)return null;
-    	ListNode head = new ListNode(0);
-        ListNode temp = head;
-        while(l1!=null&&l2!=null){
-	        if(l1.val>l2.val){
-	        	temp.val=l2.val;
-	        	l2=l2.next;
-	        }else{
-	        	temp.val=l1.val;
-	        	l1=l1.next;
-	        }
-	        temp.next=new ListNode(0);
-	        temp=temp.next;
-        }
-        
-        while(l1!=null){
-        	temp.val=l1.val;
-        	l1=l1.next;
-        	if(l1!=null)
-        	temp.next = new ListNode(0);
-        	temp=temp.next;
-        }
-        while(l2!=null){
-        	temp.val=l2.val;
-        	l2=l2.next;
-        	if(l2!=null)
-        	temp.next = new ListNode(0);
-        	temp=temp.next;
-        }
+    		while(null!=l){
+    			list.add(l.val);
+    			l=l.next;
+    		}
+    	}	
+    	Collections.sort(list);
+    	ListNode temp = null;
+    	ListNode ex = null;
+    	Iterator<Integer> i = list.iterator();
+    	while(i.hasNext()){
+    		temp = new ListNode(i.next());
+    		if(null==head){
+    			head = temp;
+    		}
+    		if(null!=ex){
+    			ex.next=temp;
+    		}
+    		ex = temp;
+    	}
     	
     	return head;
     }  
