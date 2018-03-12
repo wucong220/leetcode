@@ -11,9 +11,9 @@ public class P31NextPermutation {
 		int j=end;
 		int key = input[i];
 		while(i<j){
-			while(input[j]>=input[i]&&i<j)j--;
+			while(input[j]>=key&&i<j)j--;
 			if(i<j)input[i]=input[j];
-			while(input[i]<=input[j]&&i<j)i++;
+			while(input[i]<=key&&i<j)i++;
 			if(i<j)input[j]=input[i];
 		}
 		input[i] = key;
@@ -45,7 +45,7 @@ public class P31NextPermutation {
 	}
 
 	public static void main(String[] args) {
-		int[] input = new int[] { 3, 2, 1 };
+		int[] input = new int[] {  1 };
 		nextPermutation(input);
 		System.out.println(Arrays.toString(input));
 		
