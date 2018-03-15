@@ -2,7 +2,9 @@ package test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Test {
 	public static void main(String[] args) {
@@ -27,5 +29,19 @@ public class Test {
 		
 		List<Integer> fuck1 = new ArrayList<>();
 		fuck1.add(0,5);
+		
+		Set<Character> sa = new HashSet<>();
+		Set<Character> sb = new HashSet<>();
+		sa.add('a');
+		sa.add('b');
+		sb.add('b');
+		sb.add('a');
+		Set<Set<Character>> ssc = new HashSet<>();
+		ssc.add(sa);
+		
+		System.out.println(ssc.contains(sb));
+		System.out.println(ssc);
+		System.out.println(sa.equals(sb));
+		
 	}
 }
