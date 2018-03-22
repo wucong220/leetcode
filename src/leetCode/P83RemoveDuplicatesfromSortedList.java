@@ -1,40 +1,30 @@
 package leetCode;
 
-public class P82RemoveDuplicatesfromSortedListII {
+public class P83RemoveDuplicatesfromSortedList {
     static public ListNode deleteDuplicates(ListNode head) {
         
     	ListNode ptr = head;
-    	ListNode pin_node = new ListNode(0);
-    	pin_node.next=head;
-    	ListNode headPre = pin_node;
-    	int count=1;
-    	
-    	
-    	
+    	ListNode pin_node =head;
     	while(ptr.next!=null){
-    		count=0;
     		while(ptr.next!=null&&ptr.val==ptr.next.val){
-    			count++;
     			ptr=ptr.next;
     		}
     		if(ptr!=null){
     			
-    			if(count==0){
-    				pin_node=ptr;
-    			}else{
-    				pin_node.next=ptr.next;
-    			}
+
+    			pin_node.next=ptr.next;
+    			pin_node=ptr.next;
     			if(ptr.next!=null)
     			ptr = ptr.next;
     		}
     	}
     	
     	
-    	return headPre.next;
+    	return head;
     }
     
     public static void main(String[] args) {
-		ListNode head = ListNode.constructALinkList("1112233456");
+		ListNode head = ListNode.constructALinkList("112233456");
 		ListNode.printLinkList(deleteDuplicates(head));
 	}
 }

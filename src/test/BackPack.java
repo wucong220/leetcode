@@ -63,7 +63,6 @@ public class BackPack {
 	}
 
 	static public List<Phy_server> putIn(int phy_server_cpu, int phy_server_mem, Map<String, Integer> vir_servers) {
-
 		List<Phy_server> phy_servers = new ArrayList<Phy_server>();
 
 		Iterator<String> iterator = vir_servers.keySet().iterator();

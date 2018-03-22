@@ -16,8 +16,6 @@ public class P78Subsets {
 				ret.add(l);
 			}
 		}
-		
-		
 		return ret;
     }
 	

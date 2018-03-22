@@ -1,9 +1,9 @@
 package leetCode;
 
 public class ListNode {
-    int val;
+    public int val;
     ListNode next;
-    ListNode(int x) { val = x; }
+    public ListNode(int x) { val = x; }
     
     static public ListNode constructALinkList(String numbers){
     	ListNode head = null;
@@ -29,5 +29,11 @@ public class ListNode {
     		head = head.next;
     	}
     	System.out.println();
+    }
+    
+    @Override
+    public String toString() {
+    	// TODO Auto-generated method stub
+    	return String.valueOf(val);
     }
 }
