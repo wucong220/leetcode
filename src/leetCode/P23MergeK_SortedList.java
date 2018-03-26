@@ -5,6 +5,8 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
+import DataStructure.ListNode;
+
 public class P23MergeK_SortedList {
 	static public ListNode mergeKLists(ListNode[] lists) {
 	ListNode head = null;

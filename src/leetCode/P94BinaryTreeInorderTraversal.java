@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
+import DataStructure.TreeNode;
+
 public class P94BinaryTreeInorderTraversal {
 	// inorder traversal 中序遍历 Recursive solution is trivial, could you do it
 	// iteratively?

@@ -3,6 +3,8 @@ package leetCode;
 import java.util.ArrayList;
 import java.util.List;
 
+import DataStructure.TreeNode;
+
 public class P95GeneratedTrees {
 	static public List<TreeNode> generateTrees(int n) {
 		return generateTrees(1, n);

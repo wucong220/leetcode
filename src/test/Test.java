@@ -8,7 +8,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import leetCode.ListNode;
+import DataStructure.ListNode;
 
 public class Test {
 	public static void main(String[] args) {

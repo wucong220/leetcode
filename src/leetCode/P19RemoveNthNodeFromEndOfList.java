@@ -1,5 +1,7 @@
 package leetCode;
 
+import DataStructure.ListNode;
+
 public class P19RemoveNthNodeFromEndOfList {
     static public ListNode removeNthFromEnd(ListNode head, int n) {
     	ListNode temp = head;

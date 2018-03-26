@@ -1,5 +1,7 @@
 package leetCode;
 
+import DataStructure.ListNode;
+
 public class P61RotateList {
     static public ListNode rotateRight(ListNode head, int k) {
     	

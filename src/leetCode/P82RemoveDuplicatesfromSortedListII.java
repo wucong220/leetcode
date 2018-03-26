@@ -1,5 +1,7 @@
 package leetCode;
 
+import DataStructure.ListNode;
+
 public class P82RemoveDuplicatesfromSortedListII {
     static public ListNode deleteDuplicates(ListNode head) {
         

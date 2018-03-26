@@ -1,5 +1,7 @@
 package leetCode;
 
+import DataStructure.ListNode;
+
 public class P86PartitionList {
 	static public ListNode partition(ListNode head, int x) {
 		if (head == null)

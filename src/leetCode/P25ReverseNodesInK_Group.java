@@ -1,5 +1,7 @@
 package leetCode;
 
+import DataStructure.ListNode;
+
 public class P25ReverseNodesInK_Group {
     
 	static public ListNode reverseLinkList(ListNode pre,ListNode ptr,int size){

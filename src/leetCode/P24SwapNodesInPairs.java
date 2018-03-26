@@ -1,5 +1,7 @@
 package leetCode;
 
+import DataStructure.ListNode;
+
 public class P24SwapNodesInPairs {
     public static ListNode swapPairs(ListNode head) {
     	if(head==null){

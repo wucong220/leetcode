@@ -3,6 +3,8 @@ package leetCode;
 import java.util.ArrayList;
 import java.util.List;
 
+import DataStructure.BiNode;
+
 public class P17LetterCombinationsOfAPhoneNumber {
     static public List<String> letterCombinations(String digits) {
     	PhoneNumber number=null;

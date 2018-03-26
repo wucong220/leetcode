@@ -1,5 +1,7 @@
 package leetCode;
 
+import DataStructure.ListNode;
+
 public class P92ReverseLinkedListII {
     static public ListNode reverseBetween(ListNode head, int m, int n) {
         //node_m->after_n ;beafore_m->n;

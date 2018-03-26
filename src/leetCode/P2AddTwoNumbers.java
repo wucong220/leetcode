@@ -1,5 +1,7 @@
 package leetCode;
 
+import DataStructure.ListNode;
+
 public class P2AddTwoNumbers {
 	/**
 	 * Definition for singly-linked list. public class ListNode { int val;

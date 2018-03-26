@@ -1,8 +1,8 @@
-package leetCode;
+package DataStructure;
 
 public class ListNode {
     public int val;
-    ListNode next;
+    public ListNode next;
     public ListNode(int x) { val = x; }
     
     static public ListNode constructALinkList(String numbers){
