@@ -1,6 +1,6 @@
 package leetCode;
 
-public class P3LongestSubstringWithoutRepeatingCharacters {
+public class P03LongestSubstringWithoutRepeatingCharacters {
 	public static void main(String[] args) {
 		
 	}
