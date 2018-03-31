@@ -5,7 +5,9 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 import java.util.Set;
 
 import DataStructure.ListNode;
@@ -65,6 +67,7 @@ public class Test {
 		
 		ArrayList<Integer> ai  = new ArrayList<>(Arrays.asList(1,2,3,4,5,6));
 		System.out.println(ai);
+		
 		Collections.sort(ai,new Comparator<Integer>(){
 
 			@Override
@@ -75,5 +78,17 @@ public class Test {
 			
 		});
 		System.out.println(ai);
+		
+		System.out.println(Character.isAlphabetic('干'));
+		System.out.println('A'-'a');
+		System.out.println('0'-'P');
+		System.out.println((int)'0');
+		
+		Queue<Integer> i = new LinkedList<>();
+		
+		i.offer(1);
+		i.addAll(ai);
+		i.poll();i.poll();
+		System.out.println(i);
 	}
 }
