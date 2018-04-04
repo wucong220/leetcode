@@ -90,5 +90,24 @@ public class Test {
 		i.addAll(ai);
 		i.poll();i.poll();
 		System.out.println(i);
+		
+		Queue<List<String>> q = new LinkedList<>();
+		List<String> ls = new ArrayList<>();
+		ls.add("1");
+		ls.add("2");
+		q.offer(ls);
+		System.out.println(q);
+		ls.add("3");
+		q.offer(ls);
+		System.out.println(q);
+		
+		byte a = 0;
+		System.out.println(a|(1<<1));
+		System.out.println(a|(1<<2));
+		
+		Integer yourmother = 6;
+		Integer fuckyou = yourmother;
+		fuckyou++;
+		System.out.println(yourmother);
 	}
 }
