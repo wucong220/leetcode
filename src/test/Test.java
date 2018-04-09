@@ -109,5 +109,14 @@ public class Test {
 		Integer fuckyou = yourmother;
 		fuckyou++;
 		System.out.println(yourmother);
+		double a213 = (double)3/2;
+		System.out.println("a213="+a213);
+		System.out.println(Double.MAX_VALUE);
+		System.out.println(Long.MAX_VALUE);
+		System.out.println(Integer.MAX_VALUE);
+		System.out.println(Math.round(1.6));
+		System.out.println((double)94911150/94911151);
+		System.out.println((double)94911151/94911152);
+		System.out.println();
 	}
 }
