@@ -20,20 +20,27 @@ public class P853CarFleet {
 			pair[i][0] = entry.getKey();
 			pair[i][1] = entry.getValue();
 		}
-		System.out.println(Arrays.deepToString(pair));
+		//System.out.println(Arrays.deepToString(pair));
 		int fleetctr = position.length;
 		while (true) {
 			for (int i = 0; i < fleetctr; i++) {
 				pair[i][0] += pair[i][1];
 			}
-			
+
 			for (int i = fleetctr - 1; i >= 0; i--) {
 				if (i == fleetctr - 1) {
 					if (pair[i][0] > target) {
-						result++;
-						fleetctr--;
+						if (i > 0 && (float) (target - pair[i - 1][0]) / pair[i - 1][1] <= (float) (target - pair[i][0])
+								/ pair[i][1]) {
+							pair[i - 1][0] = pair[i][0];
+							pair[i - 1][1] = pair[i][1];
+							fleetctr--;
+						}else{
+							result++;
+							fleetctr--;
+						}
 					} else {
-						if (i > 0 &&pair[i - 1][0] >= pair[i][0]) {
+						if (i > 0 && pair[i - 1][0] >= pair[i][0]) {
 							pair[i - 1][0] = pair[i][0];
 							pair[i - 1][1] = pair[i][1];
 							fleetctr--;
@@ -41,8 +48,20 @@ public class P853CarFleet {
 					}
 				} else {
 					if (pair[i][0] > target) {
+						if (i > 0 && (float) (target - pair[i - 1][0]) / pair[i - 1][1] <= (float) (target - pair[i][0])
+								/ pair[i][1]) {
+							pair[i - 1][0] = pair[i][0];
+							pair[i - 1][1] = pair[i][1];
+							for (int j = i; j < fleetctr - 1; j++) {
+								pair[j][0] = pair[j + 1][0];
+								pair[j][1] = pair[j + 1][1];
+							}
+							fleetctr--;
+						}
+						else{
 						result++;
 						fleetctr--;
+						}
 					} else {
 						if (i > 0 && pair[i - 1][0] >= pair[i][0]) {
 							pair[i - 1][0] = pair[i][0];
@@ -56,13 +75,15 @@ public class P853CarFleet {
 					}
 				}
 			}
-			System.out.println(Arrays.deepToString(pair)+result);
-			if(fleetctr==0)break;
+			//System.out.println(Arrays.deepToString(pair));;
+			if (fleetctr == 0)
+				break;
 		}
 		return result;
 	}
 
 	public static void main(String[] args) {
-		System.out.println(carFleet(21, new int[] { 1,15,6,8,18,14,16,2,19,17,3,20,5 }, new int[] {8,5,5,7,10,10,7,9,3,4,4,10,2}));
+		System.out.println(carFleet(633947, new int[] { 438041,10102,52880,327011,192635,540709,246171,288172,299615,12225 },
+				new int[] { 952932,300584,277425,445395,776871,998301,45486,793585,617741,73735 }));
 	}
 }
