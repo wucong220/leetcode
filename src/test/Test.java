@@ -13,7 +13,7 @@ import java.util.Set;
 import DataStructure.ListNode;
 
 public class Test {
-	public static void main(String[] args) {
+	public static void main1(String[] args) {
 		System.out.println(6/5);
 		boolean[] fuck = new boolean[10];
 		System.out.println(Arrays.toString(fuck));
@@ -118,5 +118,15 @@ public class Test {
 		System.out.println((double)94911150/94911151);
 		System.out.println((double)94911151/94911152);
 		System.out.println();
+	}
+	
+	public static void main(String[] args) {
+		int[] a  = new int[5];
+		try{
+		a[5] = 10;
+		}catch(Exception e){
+			
+		}
+		System.out.println("fuck ");
 	}
 }
