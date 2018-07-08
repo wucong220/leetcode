@@ -130,7 +130,7 @@ public class P850RectangleAreaII {
 	}
 	
 	public static void main(String[] args) {
-		int[][] rectangles = new int[][]{{25,20,70,27},{68,80,79,100},{31,41,66,76}};
+		int[][] rectangles = new int[][]{{25,20,70,27},{68,80,79,100},{68,80,79,100}};
 		System.out.println(new P850RectangleAreaII().rectangleArea(rectangles));
 	}
 }
