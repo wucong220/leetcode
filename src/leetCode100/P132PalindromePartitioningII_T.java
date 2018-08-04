@@ -40,6 +40,10 @@ public class P132PalindromePartitioningII_T {
 		return true;
 	}*/
 	
+	
+	//这道题，实际上分为两个步骤，字符串的所有回文用数组记录下来（O(n2)）
+	//再根据回文的出现情况，动态规划cut。（O(n2)）
+	//总时间复杂度(O(n2))
 	public static int minCut(String s) {
 	    char[] c = s.toCharArray();
 	    int n = c.length;
