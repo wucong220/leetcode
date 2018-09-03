@@ -118,6 +118,7 @@ public class Test {
 		System.out.println((double)94911150/94911151);
 		System.out.println((double)94911151/94911152);
 		System.out.println();
+
 	}
 	
 	public static void main(String[] args) {

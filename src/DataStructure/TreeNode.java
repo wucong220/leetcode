@@ -12,7 +12,20 @@ public class TreeNode {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return "[ "+val +","+ left +","+right+" ]";
+		Queue<TreeNode> q = new LinkedList<>();
+		q.offer(this);
+		String ret = new String();
+		while(!q.isEmpty()){
+			int qsize = q.size();
+			for(int i=0;i<qsize;i++){
+				TreeNode curr=q.poll();
+				ret=ret+curr.val+" ";
+				if(curr.left!=null)q.offer(curr.left);
+				if(curr.right!=null)q.offer(curr.right);
+			}
+			ret+="\r\n";
+		}
+		return ret;
 	}
 	
 	public static TreeNode stringToTreeNode(String input) {
@@ -81,4 +94,6 @@ public class TreeNode {
         }
         return "[" + output.substring(0, output.length() - 2) + "]";
     }
+    
+    
 }
