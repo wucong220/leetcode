@@ -1,4 +1,4 @@
-package main.java.com.wu;
+package com.wu;
 
 /**
  * @author wuc006

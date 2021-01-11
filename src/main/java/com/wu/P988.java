@@ -1,5 +1,6 @@
-package main.java.com.wu;
+package com.wu;
 
+import com.wu.TreeNode;
 import sun.reflect.generics.tree.Tree;
 
 import java.util.ArrayList;

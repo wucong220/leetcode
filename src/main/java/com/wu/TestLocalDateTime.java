@@ -1,9 +1,6 @@
 package com.wu;
 
-import java.time.Duration;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalAdjusters;
@@ -101,5 +98,17 @@ public class TestLocalDateTime {
         System.out.println(LocalDate.now().withDayOfYear(1).toString()+"aaa");
         System.out.println(UUID.randomUUID());
         System.out.println("aabbcd".replaceAll("aa|bb","fuck"));
+
+        System.out.println(Duration.between(LocalDateTime.of(2019,12,25,12,0,0),LocalDateTime.now()).toMinutes());
+        System.out.println(UUID.randomUUID().toString());
+
+
+        LocalTime startLocalTime = LocalTime.parse("09:23:08");
+        LocalTime endLocalTime = LocalTime.parse("18:13:24");
+        Duration overLocalTime = Duration.between(startLocalTime, endLocalTime);
+        System.out.println((float)overLocalTime.getSeconds()/3600);
+        System.out.println(LocalDate.now().toEpochDay());
+        System.out.println(LocalDate.now().toEpochDay()-LocalDate.now().withDayOfYear(1).toEpochDay());
+        System.out.println(LocalDate.now().with(TemporalAdjusters.lastDayOfYear()).toEpochDay()-LocalDate.now().toEpochDay());
     }
 }

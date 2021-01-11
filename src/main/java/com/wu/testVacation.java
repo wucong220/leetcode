@@ -1,6 +1,11 @@
 package com.wu;
 
+import sun.awt.FontConfiguration;
 import sun.awt.windows.WPrinterJob;
+
+import java.text.SimpleDateFormat;
+import java.util.Comparator;
+import java.util.TreeSet;
 
 /**
  * @author wuc006
@@ -19,6 +24,8 @@ public class testVacation {
                 System.out.println(i+",left="+10*i/365+",right="+5*i/365);
             }
         }
-            System.out.println(String.valueOf(null));
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM");
+        Object object = null;
+        format.format(object);
     }
 }

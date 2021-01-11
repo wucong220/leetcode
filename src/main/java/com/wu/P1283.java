@@ -1,4 +1,4 @@
-package main.java.com.wu;
+package com.wu;
 
 import java.util.ArrayList;
 import java.util.HashMap;

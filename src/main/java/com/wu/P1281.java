@@ -1,4 +1,4 @@
-package main.java.com.wu;
+package com.wu;
 
 import javax.management.relation.RoleUnresolved;
 
