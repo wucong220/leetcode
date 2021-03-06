@@ -9,12 +9,15 @@ import java.util.Arrays;
 //并查集
 class AndCheckSet {
     int[] f;
+    //联通分量个数
+    int count;
 
     public AndCheckSet(int size){
         f = new int[size];
         for(int i=0;i<size;i++){
             f[i]=i;
         }
+        count = size;
     }
 
     int findParent(int a){
@@ -36,20 +39,19 @@ class AndCheckSet {
         }
     }
 
-    void union(int a,int b){
+    boolean union(int a,int b){
         int aP = findParent(a);
         int bP = findParent(b);
         if (aP != bP) {
             pathCompression(a,bP);
             pathCompression(b,bP);
+            count--;
+            return true;
         }
+        return false;
     }
 
     int count(){
-        for (int i=0;i<f.length;i++) {
-            int p = findParent(i);
-            pathCompression(i,p);
-        }
-        return (int) Arrays.stream(f).distinct().count();
+        return count;
     }
 }
