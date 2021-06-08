@@ -24,7 +24,7 @@ public class HeapSort {
             if(a[i*2+1]<target){
                 a[i] = a[i*2+1];
             }
-            if(a[i])
+//            if(a[i])
         }
     }
 
