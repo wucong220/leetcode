@@ -37,10 +37,10 @@ public class RunUtil {
 //                if(j<parameterTypes.length)continue;
 
                 if (methodName != null)
-                    method = solutionClass.getMethod(methodName, params);
+                    method = Arrays.stream(solutionClass.getMethods()).filter(a->a.getName().contains(methodName)).findFirst().get();
                 Object o = method.invoke(o2, args);
-                if(o.getClass().isArray()){
-//                    System.out.println(Arrays.deepToString((Object[]) o));
+                if(o instanceof Array){
+                    System.out.println(Arrays.deepToString((Object[]) o));
                 }
                 else System.out.println(o);
                 return o;

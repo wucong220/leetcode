@@ -9,28 +9,23 @@ import java.util.Arrays;
 public class CN300 {
     class Solution {
         public int lengthOfLIS(int[] nums) {
-            int tail = -1;
-            int[] tails = new int[nums.length];
-            for (int i = 0; i < nums.length; i++) {
-                if(tail==-1){
-                    tails[++tail]=nums[i];
+            int[] d = new int[nums.length];
+            int tail = 0;
+            for(int i=0;i<nums.length;i++){
+                if(i==0){
+                    d[i] = nums[i];
+                    tail=1;
                 }
                 else{
-                    if(tails[tail]<nums[i]){
-                        tails[++tail]=nums[i];
-                    }
-                    else{
-                        int index = Arrays.binarySearch(tails, 0, tail, nums[i]);
-                        if(index>-1) {
-                            tails[index] = nums[i];
-                        }
-                        else{
-                            tails[-(index+1)] = nums[i];
-                        }
+                    int index = Arrays.binarySearch(d, 0, tail, nums[i]);
+                    if(index<0){
+                        index = -index-1;
+                        d[index] = nums[i];
+                        if(index==tail)tail=index+1;
                     }
                 }
             }
-            return tail+1;
+            return tail;
         }
     }
 }

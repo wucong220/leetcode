@@ -9,47 +9,43 @@ import java.util.Arrays;
 public class CN32 {
     class Solution {
         public int longestValidParentheses(String s) {
-            int d[][] = new int[s.length()][s.length()];
-            for(int i=2;i<=s.length();i +=2){
-                for(int j=0;j+i-1<s.length();j++){
-                    if(i==2){
-                        if(s.charAt(j)=='('&&s.charAt(i+j-1)==')'){
-                            d[j][i+j-1]=2;
-                        }
-                        else{
-                            d[j][i+j-1]=0;
-                        }
+            int[] d = new int[s.length()];
+            int max = 0;
+            for(int i=0;i<s.length();i++){
+                if(i==0){
+                    d[i]=0;
+                }
+                else if(i==1){
+                    if(s.charAt(0)=='('&&s.charAt(1)==')'){
+                        d[i]=2;
                     }
                     else{
-                        if(s.charAt(j)=='('&&s.charAt(i+j-1)==')'&&d[j+1][i+j-2]==i-2){
-                            d[j][i+j-1] = i;
+                        d[i]=0;
+                    }
+                }
+                else{
+                    if(s.charAt(i)==')'){
+                        if(s.charAt(i-1)=='('){
+                            d[i] = 2 + d[i-2];
                         }
-                        else{
-                            for(int k=j+1;k<=i+j-3;k++){
-                                if(d[j][k]==k-j+1&&d[k+1][j+i-1]==j+i-k-1){
-                                    d[j][i+j-1]=i;
-                                    break;
-                                }
-                                else{
-                                    d[j][i+j-1] = 0;
-                                }
+                        else if(i-d[i-1]-1>=0&&s.charAt(i-d[i-1]-1)=='('){
+                            d[i] = 2 + d[i-1];
+                            if(i-d[i-1]-2>=0){
+                                d[i]+=d[i-d[i-1]-2];
                             }
                         }
                     }
                 }
+                max = Math.max(d[i],max);
             }
-            int max = 0;
-            for(int i=0;i<d.length;i++){
-                for(int j=0;j<d[0].length;j++){
-                    max = Math.max(d[i][j],max);
-                }
-            }
-
             return max;
         }
     }
 
     public static void main(String[] args) {
-        RunUtil.run(")(((((()())()()))()(()))(");
+        System.out.println("((((()())()()))()(()))".length());
+        System.out.println("((((()())()()))()(()))".substring(0,1));
+        System.out.println("((((()())()()))()(()))".substring(17));
+        RunUtil.run("(()())");
     }
 }
