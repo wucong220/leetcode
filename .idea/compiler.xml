@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <excludeFromCompile>
+      <file url="file://$PROJECT_DIR$/src/main/java/contest/P875.java" />
+      <file url="file://$PROJECT_DIR$/src/main/java/contest/P906.java" />
+      <file url="file://$PROJECT_DIR$/src/main/java/leetCode100/P150EvaluateReversePolishNotation.java" />
+      <file url="file://$PROJECT_DIR$/src/main/java/leetCode200/P278.java" />
+      <file url="file://$PROJECT_DIR$/src/main/java/test/Main.java" />
+    </excludeFromCompile>
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="leetCode" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="leetCode" target="8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
