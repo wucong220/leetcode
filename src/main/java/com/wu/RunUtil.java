@@ -39,8 +39,8 @@ public class RunUtil {
                 if (methodName != null)
                     method = solutionClass.getMethod(methodName, params);
                 Object o = method.invoke(o2, args);
-                if(o instanceof Array){
-                    System.out.println(Arrays.deepToString((Object[]) o));
+                if(o.getClass().isArray()){
+//                    System.out.println(Arrays.deepToString((Object[]) o));
                 }
                 else System.out.println(o);
                 return o;
