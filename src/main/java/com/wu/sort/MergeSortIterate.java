@@ -12,10 +12,11 @@ public class MergeSortIterate {
             for(int j=0;j<a.length;j+= 2 * i){
                 int k = j;
                 int l = j+i;
-                int max = Math.min(2 * i,a.length-1);
-                int[] temp = new int[max];
+                int maxK = Math.min( i,a.length-j);
+                int maxL = Math.min(2 * i,a.length-j);
+                int[] temp = new int[maxL];
                 int m=0;
-                while(k<j+i&&l<j+ max){
+                while(k<j+maxK&&l<j+ maxL){
                     if(a[k]<a[l]){
                         temp[m++] = a[k++];
                     }
@@ -24,22 +25,20 @@ public class MergeSortIterate {
                     }
                 }
 
-                while(k<j+i){
+                while(k<j + maxK){
                     temp[m++] = a[k++];
                 }
 
-                while(l<j+ max){
+                while(l<j + maxL){
                     temp[m++] = a[l++];
                 }
 
-                System.arraycopy(temp,0,a,j, max);
+                System.arraycopy(temp,0,a,j, maxL);
             }
         }
     }
 
     public static void main(String[] args) {
-        int[] array = new int[]{1,3,2,4};
-        sort(array);
-        System.out.println(Arrays.toString(array));
+        SortTest.run(MergeSortIterate::sort);
     }
 }

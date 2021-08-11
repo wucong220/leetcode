@@ -1,4 +1,4 @@
-package main.java.com.wu;
+package com.wu;
 
 import java.util.Arrays;
 import java.util.HashSet;

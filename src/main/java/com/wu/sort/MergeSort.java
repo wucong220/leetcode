@@ -7,6 +7,10 @@ import java.util.Arrays;
  * @date 2021/6/8 9:54
  */
 public class MergeSort {
+    static void sort(int[] a){
+        sort(a,0,a.length-1);;
+    }
+
     static void sort(int[] a,int l,int r){
         if(l==r) return;
         int mid = l + (r - l) / 2;
@@ -36,8 +40,6 @@ public class MergeSort {
     }
 
     public static void main(String[] args) {
-        int[] array = new int[]{1,3,2,4};
-        sort(array,0,array.length-1);
-        System.out.println(Arrays.toString(array));
+        SortTest.run(MergeSort::sort);
     }
 }

@@ -53,12 +53,8 @@ public class RunUtil {
         return null;
     }
 
-
+    static Class<?> rootContentType;
     public static Object toArray(String input) {
-        return toArray(input, null);
-    }
-
-    private static Object toArray(String input, int[] dimensions) {
         input = input.replaceAll("\\s+", "");
         char[] chars = input.toCharArray();
         int level = 0;
@@ -69,14 +65,12 @@ public class RunUtil {
                 break;
             }
         }
-        if (dimensions == null) {
-            dimensions = new int[level];
-        }
-        Object arrayObject = null;
+
+
         String substring = input.substring(1, input.length() - 1);
         List<String> components = new ArrayList<>();
         if (level == 1) {
-            components = Arrays.asList(substring.split(","));
+            if(substring.length()>0) components = Arrays.asList(substring.split(","));
         } else {
 //            components = Arrays.asList(substring.split(",(?=\\[)"));
             Stack<Integer> s = new Stack<>();
@@ -90,9 +84,10 @@ public class RunUtil {
                 }
             }
         }
+        Object arrayObject = null;
+        Class<?> contentType = rootContentType;
         for (int i = 0; i < components.size(); i++) {
             Object o;
-            Class<?> contentType;
             String component = components.get(i);
             if (level == 1) {
                 try {
@@ -107,18 +102,34 @@ public class RunUtil {
                         contentType = String.class;
                     }
                 }
+                rootContentType = contentType;
             } else {
-                o = toArray(component, dimensions);
-                contentType = o.getClass().getComponentType();
+                o = toArray(component);
+                contentType = o.getClass();
             }
-            if (arrayObject == null) {
-                int[] currDimensions = new int[level];
-                dimensions[dimensions.length - level] = components.size();
-                for (int j = 0; j < level; j++) {
-                    currDimensions[j] = dimensions[dimensions.length - level + j];
-                }
+            break;
+        }
 
-                arrayObject = Array.newInstance(contentType, currDimensions);
+        arrayObject = Array.newInstance(contentType, components.size());
+        for(int i=0;i<components.size();i++){
+            Object o;
+            String component = components.get(i);
+            if (level == 1) {
+                try {
+                    o = Integer.parseInt(component);
+                } catch (Exception e) {
+                    try {
+                        o = Double.parseDouble(component);
+                    } catch (Exception e1) {
+                        o = String.valueOf(component);
+                        String temp = (String) o;
+                        if(temp.startsWith("\"")&&temp.endsWith("\"")){
+                            o = temp.substring(1,temp.length()-1);
+                        }
+                    }
+                }
+            } else {
+                o = toArray(component);
             }
             Array.set(arrayObject, i, o);
         }

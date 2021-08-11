@@ -1,5 +1,7 @@
 package com.wu;
 
+import java.util.Arrays;
+
 public class CN149 {
     class Solution {
         public int maxPoints(int[][] points) {
@@ -17,5 +19,9 @@ public class CN149 {
             }
             return max;
         }
+    }
+
+    public static void main(String[] args){
+
     }
 }

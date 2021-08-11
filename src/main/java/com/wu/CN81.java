@@ -1,4 +1,4 @@
-//package com.wu;
+package com.wu;//package com.wu;
 //
 ///**
 // * @author wuc006
